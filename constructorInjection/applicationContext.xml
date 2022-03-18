@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    
+    <!-- Dependency injection by setter: -->
+    <bean id="membershipBean" class="constructorInjection.Membership">
+    	<property name="membershipId" value="312"/>
+    	<property name="membershipType" value="perm"/>
+    	<property name="visitsPerYear" value="55"/>
+    	<property name="Customer" ref="customerBean"/> 
+    	
+    </bean>  
+    
+    <!-- Dependency injection by constructor: -->
+    <bean id="customerBean" class="constructorInjection.Customer">
+    	<constructor-arg name="custId" value="312"/>
+    	<constructor-arg name="custName" value="John"/>
+    	<constructor-arg name="emailId" value="gg@gmail.com"/>
+    	<constructor-arg name="contactNo" value="98765432"/>
+    </bean>
+    
+</beans>
+
+
+
+
+
